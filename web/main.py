@@ -31,13 +31,13 @@ def oven_start():
     db.update({'status': 'in the oven'}, Order.status == 'preparation')
     return "ok"
 
-# @app.route("/tracker", methods=['GET'])
-# def tracker(): 
-#     return render_template('tracker.html')
+@app.route("/tracker", methods=['GET'])
+def tracker(): 
+    return render_template('frontend/pizza_tracker/kitchen.html')
 
-# @app.route("/cashier", methods=['GET']) 
-# def cashier(): 
-#     return render_template('cashier.html')
+@app.route("/cashier", methods=['GET']) 
+def cashier(): 
+    return render_template('/frontend/cashier_ui/pizza.html')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
