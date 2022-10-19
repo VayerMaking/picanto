@@ -1,97 +1,94 @@
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
-.wireframe-1{
-    align-items:flex-start;
-    border:1px none;
-    display:flex;
-    height: 250px;
-    width: 500px;
+body{ 
+    background-image: url("images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
 }
 
-.container1{
-    align-items: flex-end;
-    background-image: url(/static/cashier_ui/images/background.png);
-    background-position: 50% 50%;
-    background-size:cover;
-    display:flex;
-    flex-direction: column;
-    gap: 128px;
-    min-height: 250px;
-    padding: 128px 24px;
-    width: 1440px;
-
-}
-
-.flex-row {
-    align-items: center;
-    display: flex;
-    margin-top: 145px;
-    min-width: 1225px;
-}
-
-.line{
-    height: 295px;
-    margin-left: 22px;
-    margin-top: 0.07px;
-    width: 21px;
-}
-
-.flex-col{
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 29px;
-    margin-left: 39px;
-    margin-top: 12.91px;
-    min-height: 280px;
-    width: 772px;
-
-}
-
-.text-in-the-middle{
-    color:#300303;
-    font-family:var(--font-family-im_fell_dw_pica-regular);
-    font-size: 30px;
-    font-weight: 400;
-    height: 61px;
-    letter-spacing: 0;
-    width: 772px;
-}
-
-
-.container2{
-    align-self: center;
-    border-radius:20px;
-    height: 128px;
-    margin-left: 120px;
-    position: relative;
-    width: 350px;
-}
-
-.title{
-    color:black;
-    font-family:var(--font-family-im_fell_dw_pica-regular);
-    font-size: 30px;
-    font-weight: 400px;
-    height: 50px;
-    left: 201px;
-    letter-spacing: 0;
-    position: absolute;
-    top: 38px;
-}
-
-.rectangle{
+.container_1 {
+    left: 0px;
+    top: 0px;
     display: flex;
     justify-content: center;
-    background-color: #e0bb95;
-    border: 1px none;
-    border-radius: 45px;
-    cursor: pointer;
-    height: 128px;
+    align-items:flex-end;
+    height: 470px;
+    /* background-color: aliceblue; */
+}
 
-    width: 500px;
+.item_1{
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    /* background-color: aqua; */
+}
+
+.item_2 {
+    width: 15px;
+    height: 260px;
+    margin: 10px;
+    /* background-color: aqua; */
+    margin-bottom: 18px;
+}
+
+.item_3 {
+    width: 550px;
+    height: 300px;
+    margin: 10px;
+    /* background-color: aqua; */
+    
+}
+
+.title_up {
+    font-family: 'IM FELL DW Pica';
+    font-style: normal;
+    font-size: 75px;
+    align-items: center;
+    color: #671414;
+    -webkit-text-fill-color: #671414;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #280D0D;
+    /* background-color:blanchedalmond; */
+    margin-top: 25px;
+} 
+
+.title_down {
+    font-family: 'IM FELL DW Pica';
+    font-style: normal;
+    font-size: 75px;
+    align-items: center;
+    color: #671414;
+    -webkit-text-fill-color: #671414;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #280D0D;
+    /* background-color:blanchedalmond; */
+} 
+
+.slogan {
+    font-family: 'IM Fell DW Pica';
+    font-style: normal;
+    font-size: 40px;
+    align-items: center;
+    color: white;
+    margin-bottom: 35px;
+    /* background-color:blanchedalmond; */
+}
+
+.container_2{
+    display: flex;
+    background: #F5F0F0;
+    justify-content: center;
+    border-radius: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+    height: 80px;
+    align-items:center;
+    margin-top: 60px;
+    background-color: #e0bb95;
+    cursor: pointer;
 }
