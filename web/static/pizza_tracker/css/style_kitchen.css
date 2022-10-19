@@ -5,7 +5,7 @@
 }
 
 body{ 
-    background-image: url("images/dough.png");
+    background-image: url(/static/pizza_tracker/images/dough.png);
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;

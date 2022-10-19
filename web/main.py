@@ -33,11 +33,11 @@ def oven_start():
 
 @app.route("/tracker", methods=['GET'])
 def tracker(): 
-    return render_template('frontend/pizza_tracker/kitchen.html')
+    return render_template('kitchen.html')
 
 @app.route("/cashier", methods=['GET']) 
 def cashier(): 
-    return render_template('/frontend/cashier_ui/pizza.html')
+    return render_template('pizza.html')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
