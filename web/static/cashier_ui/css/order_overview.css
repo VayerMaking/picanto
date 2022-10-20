@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    background-image: url("images/blurred_backgr.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+.flex-container {
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    /* background-color: #A48668; */
+}
+
+.item_1{
+    width: 95px;
+    height: 95px;
+    margin: 10px;
+    /* background-color: aqua; */
+}
+
+.item_2 {
+    width: 4px;
+    height: 95px;
+    margin: 10px;
+    /* background-color: aqua */
+}
+
+.item_3 {
+    width: 635px;
+    height: 95px;
+    margin: 10px;
+    /* background-color: aqua */
+}
+
+.title {
+    font-family: 'IM FELL DW Pica';
+    font-style: normal;
+    font-size: 50px;
+    align-items: center;
+    color: #671414;
+    -webkit-text-fill-color: #671414;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #280D0D;
+    /* background-color:blueviolet; */
+} 
+
+.slogan {
+    font-family: 'IM Fell DW Pica';
+    font-style: normal;
+    font-size: 23px;
+    align-items: center;
+    color: #B12323;
+    /* background-color: blueviolet; */
+}
+
+.flex-container_1{
+    display: flex;
+    justify-content:center;
+    background: #A48668;
+    width: 750px;
+    height: 450px;
+    margin-top: 70px;
+    border-radius: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    align-items: center;
+}
+.order_overview {
+    text-align:center;
+    font-family: 'IM FELL Double Pica';
+    font-style: normal;
+    font-size: 40px;
+    margin: 5px;
+}
+
+.flex_container_2{
+    justify-content: center;
+    background-color: #BF966A;
+    border-radius: 45px;
+    width: 600px;
+    height: 450px;
+    margin-top: 15px;
+}
+
+.inner_container_1{
+    display: flex;
+    justify-content: center;
+    /* background: #A48668; */
+    margin-top: 20px;
+    flex-direction: row;
+    /* background: yellow; */
+}
+
+.order_number{
+    font-family: 'IM FELL Double Pica';
+    font-size: 40px;
+    /* background-color: aliceblue; */
+    margin: 10px;
+}
+
+.number{
+    font-size: 40px;
+    /* background-color: aliceblue; */
+    margin: 10px;
+    font-family: 'IM FELL Double Pica';
+}
+
+.button_box{
+    background-color: #E0BB95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 400px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+.button{
+    font-family: 'IM FELL Double Pica';
+    color: #000000;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: black;
+}
