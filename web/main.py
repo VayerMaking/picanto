@@ -39,5 +39,9 @@ def tracker():
 def cashier(): 
     return render_template('pizza.html')
 
+@app.route("/overview", methods=['GET']) 
+def cashier(): 
+    return render_template('order_overview.html')
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)
