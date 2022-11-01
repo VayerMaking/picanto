@@ -1,7 +1,8 @@
 # flask server
 from tinydb import TinyDB, Query
 from datetime import datetime
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+import requests
  
 app = Flask(__name__) 
 db = TinyDB("db.json")
@@ -11,7 +12,7 @@ Order = Query()
 def makeOrder():
     order = request.get_json()
     db.insert(order)
-    return 'ok'
+    return jsonify("ok")
 
 @app.route('/orders', methods=['GET'])
 def getOrders():
@@ -33,7 +34,9 @@ def oven_start():
 
 @app.route("/tracker", methods=['GET'])
 def tracker(): 
-    return render_template('kitchen.html')
+    orders = requests.get('http://127.0.0.1:8080/orders').json()
+    print(orders)
+    return render_template('kitchen.html', orders=orders)
 
 @app.route("/cashier", methods=['GET']) 
 def cashier(): 

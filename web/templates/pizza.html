@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/static/cashier_ui/css/pizza.css">
+    <link href="style_kitchen.css"  type="text/css"  rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=IM Fell Double Pica' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=IM Fell DW Pica' rel='stylesheet'>
     <title>Pizza Shop</title>
@@ -18,14 +19,14 @@
             </div>
         </div>
         <div class="container_2">
-            <button onclick="myFunction()">TAKE ORDER</button>
+            <h1 class="title" onclick="takeOrder()">TAKE ORDER</h1>
         </div>
     </div>
 </div>
 <script>
-    function myFunction() {
-        window.location.replace('http://127.0.0.1:8080/take_order');
+    function takeOrder() {
+        window.location.href = "/take_order";
     }
-    </script>
+</script>
 </body>
 </html>
