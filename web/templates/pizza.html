@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="pizza.css">
-    <link href="style_kitchen.css"  type="text/css"  rel="stylesheet">
+    <link rel="stylesheet" href="/static/cashier_ui/css/pizza.css">
     <link href='https://fonts.googleapis.com/css?family=IM Fell Double Pica' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=IM Fell DW Pica' rel='stylesheet'>
     <title>Pizza Shop</title>
@@ -10,8 +9,8 @@
 <body>
     <div class="main_container">
         <div class="container_1">
-            <div class="item_1"><img src="images/logo.png" alt="Pizza logo" width="300"></div>
-            <div class="item_2"><img src="images/line.png" alt="Line" width="13" height="240"></div>
+            <div class="item_1"><img src="/static/cashier_ui/images/logo.png" alt="Pizza logo" width="300"></div>
+            <div class="item_2"><img src="/static/cashier_ui/images/line.png" alt="Line" width="13" height="240"></div>
             <div class="item_3">
                 <p class="title_up">LA PIZZERIA</p> 
                 <p class="title_down">ITALIANA</p>
@@ -19,9 +18,14 @@
             </div>
         </div>
         <div class="container_2">
-            <h1 class="title">TAKE ORDER</h1>
+            <button onclick="myFunction()">TAKE ORDER</button>
         </div>
     </div>
 </div>
+<script>
+    function myFunction() {
+        window.location.replace('http://127.0.0.1:8080/take_order');
+    }
+    </script>
 </body>
 </html>

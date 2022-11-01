@@ -1,0 +1,180 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+body{
+    background-image: url("/static/cashier_ui/images/image\ 16.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .navbar{
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    height: 40px;
+} */
+
+.flex-container {
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.item_1{
+    width: 95px;
+    height: 95px;
+    margin: 10px;
+}
+
+.item_2 {
+    width: 4px;
+    height: 95px;
+    margin: 10px;
+}
+
+.item_3 {
+    width: 635px;
+    height: 95px;
+    margin: 10px;
+}
+
+.title {
+    font-family: 'IM FELL DW Pica';
+    font-style: normal;
+    font-size: 50px;
+    align-items: center;
+    color: #671414;
+    -webkit-text-fill-color: #671414;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #280D0D;
+} 
+
+.slogan {
+    font-family: 'IM Fell DW Pica';
+    font-style: normal;
+    font-size: 23px;
+    align-items: center;
+    color: #B12323;
+
+}
+.container_1 {
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    height: 40px;
+}
+
+.title_up {
+    font-family: 'IM FELL DW Pica';
+    font-style: normal;
+    font-size: 20px;
+    align-items: center;
+    color: #671414;
+    -webkit-text-fill-color: #671414;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #280D0D;
+    margin-top: 25px;
+} 
+
+/* .navmenu {
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    height: 70px;
+    overflow: hidden;
+    background-color: rgb(173, 0, 0);
+}
+
+.navmenu a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 25px 150px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navmenu a:hover {
+    background-color: rgb(214, 207, 207);
+    color: black;
+} */
+
+.flex-container_1{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.flex-container_2{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.pizza{
+    background: rgba(189, 75, 0, 0.603);
+    border: 1px none;
+    border-radius: 45px;
+    width: 300px;
+    height: 358px;
+    margin: 40px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text{
+    font-family:'IM FELL Double Pica';
+    font-size: 21px;
+    color: #000000;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    opacity: 70%;
+    margin: 10px;
+
+}
+
+.image_1 {
+    margin-right: 15px;
+}
+
+.image_2 {
+    margin-right: 15px;
+}
+
+.image_3 {
+    margin-right: 15px;
+}
+
+.image_4 {
+    margin-right: 15px;
+}
+
+.image_5 {
+    margin-right: 15px;
+}
+
+.image_6 {
+    margin-right: 15px;
+}

@@ -44,7 +44,7 @@ def take_order():
     return render_template('pizza2.html')
 
 @app.route("/overview", methods=['GET']) 
-def cashier(): 
+def overview(): 
     return render_template('order_overview.html')
  
 
