@@ -34,7 +34,7 @@ def removeFinishedOrders():
 
 @app.route("/oven_start", methods=['POST'])
 def oven_start():
-    db.update({'status': 'In the oven'}, Order.status == 'Preparing')
+    db.update({'status': 'In the oven'}, Order.status == 'Preparing', doc_ids=[1])
     return "ok"
 
 @app.route("/tracker", methods=['GET'])
