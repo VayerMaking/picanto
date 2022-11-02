@@ -71,6 +71,9 @@
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', orderDetails);
+                // alert and redirect to the order page
+                alert("Your order has been placed successfully!");
+                window.location.href = "http://127.0.0.1:8080/cashier"
             })
             .catch((error) => {
                 console.error('Error:', error);
