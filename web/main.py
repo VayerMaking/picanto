@@ -1,7 +1,9 @@
 # flask server
+import random
+import string
 from tinydb import TinyDB, Query
 from datetime import datetime
-from flask import Flask, render_template, request, jsonify, logging
+from flask import Flask, render_template, request, jsonify
 import requests
 import threading
 import time
@@ -13,6 +15,7 @@ Order = Query()
 @app.route('/orders', methods=['POST'])
 def makeOrder():
     order = request.get_json()
+    order['id'] = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
     db.insert(order)
     return jsonify("ok")
 
@@ -58,13 +61,17 @@ def start_server():
 def timer():
     while True:
         orders = db.all()
-        elapsed = 0
         for order in orders:
             if order['status'] == 'In the oven':
                 elapsed = datetime.now() - datetime.strptime(order['time_start'], '%H:%M:%S')
                 print("time elapsed: ", elapsed.seconds / 60, flush=True)
                 if elapsed.seconds / 60 > 10:
                     db.update({'status': 'Ready'}, Order.id == order['id'])
+            if order['status'] == 'Ready':
+                elapsed = datetime.now() - datetime.strptime(order['time_start'], '%H:%M:%S')
+                print("time elapsed: ", elapsed.seconds / 60, flush=True)
+                if elapsed.seconds / 60 > 15:
+                    db.remove(Order.id == order['id'])
         time.sleep(10)
 
 if __name__=='__main__':
