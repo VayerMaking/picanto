@@ -1,8 +1,10 @@
 # flask server
 from tinydb import TinyDB, Query
 from datetime import datetime
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, logging
 import requests
+import threading
+import time
  
 app = Flask(__name__) 
 db = TinyDB("db.json")
@@ -20,7 +22,7 @@ def getOrders():
     return orders
 
 def removeFinishedOrders():
-    db.remove(Order.status == 'completed')
+    db.remove(Order.status == 'Completed')
     return "ok"
 
 # @app.route("/") 
@@ -29,7 +31,7 @@ def removeFinishedOrders():
 
 @app.route("/oven_start", methods=['POST'])
 def oven_start():
-    db.update({'status': 'in the oven'}, Order.status == 'preparation')
+    db.update({'status': 'In the oven'}, Order.status == 'Preparing')
     return "ok"
 
 @app.route("/tracker", methods=['GET'])
@@ -50,6 +52,24 @@ def take_order():
 def overview(): 
     return render_template('order_overview.html')
  
+def start_server():
+    app.run(host="0.0.0.0", port=8080, use_reloader=False)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+def timer():
+    while True:
+        orders = db.all()
+        elapsed = 0
+        for order in orders:
+            if order['status'] == 'In the oven':
+                elapsed = datetime.now() - datetime.strptime(order['time_start'], '%H:%M:%S')
+                print("time elapsed: ", elapsed.seconds / 60, flush=True)
+                if elapsed.seconds / 60 > 10:
+                    db.update({'status': 'Ready'}, Order.id == order['id'])
+        time.sleep(10)
+
+if __name__=='__main__':
+    stateThread = threading.Thread(target=timer)
+    stateThread.daemon = True
+    stateThread.start()
+    webThread = threading.Thread(target=start_server)
+    webThread.start()
