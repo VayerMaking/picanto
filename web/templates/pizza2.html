@@ -12,55 +12,71 @@
         <div class="item_1"><img src="/static/cashier_ui/images/logo.png" alt="Pizza logo" width="95"></div>
         <div class="item_2"><img src="/static/cashier_ui/images/line.png" alt="Line" width="4" height="95"></div>
         <div class="item_3">
-        <p class="title">LA PIZZERIA ITALIANA</p> 
-        <p class="slogan">We promise you will come back.</p>
+            <p class="title">LA PIZZERIA ITALIANA</p> 
+            <p class="slogan">We promise you will come back.</p>
         </div>
     </div>
-    <!-- <div class="navmenu">
-        <a class="active" href="#home">HOME</a>
-        <a href="#pizza">PIZZA'S</a>
-        <a href="#order">ORDER</a>
-      </div> -->
 
       <div class="flex-container_1">
-        <div class="pizza">
+        <div class="pizza" onclick="order({'detail': 'Pizza Pepperoni', 'price': '6.50', 'status': 'Preparing'})">
             <img class="image_1" src="/static/cashier_ui/images/pepperoni-4991789_960_720.png" width="300">
             <p class="text">Pizza Pepperoni</p>
-            <p class="text">Price: 6.50 €</p>
+            <p class="text">Price: 6.50 &euro;</p>
         </div>
-        <div class="pizza">
+        <div class="pizza" onclick="order({'detail': 'Pizza Quattro Formaggi', 'price': '6.50', 'status': 'Preparing'})">
             <img class="image_2" src="/static/cashier_ui/images/western-food-1373508_1920.png" width="300">
             <p class="text">Pizza Quattro Formaggi</p>
-            <p class="text">Price: 6.50 €</p>
+            <p class="text">Price: 6.50 &euro;</p>
         </div>
 
-        <div class="pizza">        
+        <div class="pizza" onclick="order({'detail': 'Pizza Capriciossa', 'price': '7.50', 'status': 'Preparing'})">        
             <img class="image_3" src="/static/cashier_ui/images/the-pizza-1949183_1920.png" width="300">
             <p class="text">Pizza Capriciossa</p>
-            <p class="text">Price: 7.50 €</p>
+            <p class="text">Price: 7.50 &euro;</p>
         </div>
 
 
       </div>
       <div class="flex-container_2">
-        <div class="pizza">
+        <div class="pizza" onclick="order({'detail': 'Pizza Caprese', 'price': '7.00', 'status': 'Preparing'})">
             <img class="image_3" src="/static/cashier_ui/images/Picture1.png" width="200">
             <p class="text">Pizza Caprese</p>
-            <p class="text">Price: 7.00 €</p>
+            <p class="text">Price: 7.00 &euro;</p>
 
         </div>
-        <div class="pizza">
+        <div class="pizza" onclick="order({'detail': 'Pizza Margherita', 'price': '6.00', 'status': 'Preparing'})">
             <img class="image_3" src="/static/cashier_ui/images/pizza-3000285_1920.png" width="300">
             <p class="text">Pizza Margherita</p>
-            <p class="text">Price: 6.00 €</p>
+            <p class="text">Price: 6.00 &euro;</p>
 
         </div>
-        <div class="pizza">
+        <div class="pizza" onclick="order({'detail': 'Pizza Speciale', 'price': '7.50', 'status': 'Preparing'})">
             <img class="image_3" src="/static/cashier_ui/images/pizza-4500771_960_720.png" width="300">
             <p class="text">Pizza Speciale</p>
-            <p class="text">Price: 7.50 €</p>
+            <p class="text">Price: 7.50 &euro;</p>
         </div>
     </div>
+
+    <script>
+        function order(orderDetails) {
+            console.log(orderDetails);
+            
+            fetch('http://127.0.0.1:8080/orders', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(orderDetails),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', orderDetails);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
 
 </body>
 </html>
