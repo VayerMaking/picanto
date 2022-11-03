@@ -34,9 +34,10 @@ def removeFinishedOrders():
 
 @app.route("/oven_start", methods=['POST'])
 def oven_start():
-    last_order = db.get(doc_ids=[1])
+    last_order = db.get(doc_id=1)
     if last_order['status'] == 'Preparing':
-        last_order.update({'status': 'In the oven'}, Order.status == 'Preparing')
+        db.update({'status': 'In the oven'}, Query().id == last_order['id'])
+        db.upsert({'time_start': request.json()['timestamp']}, Query().id == last_order['id'])
     return "ok"
 
 @app.route("/tracker", methods=['GET'])
