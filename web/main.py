@@ -68,12 +68,12 @@ def timer():
             if order['status'] == 'In the oven':
                 elapsed = datetime.now() - datetime.strptime(order['time_start'], '%H:%M:%S')
                 print("time elapsed: ", elapsed.seconds / 60, flush=True)
-                if elapsed.seconds / 60 > 10:
+                if elapsed.seconds / 60 > 1:
                     db.update({'status': 'Ready'}, Order.id == order['id'])
             if order['status'] == 'Ready':
                 elapsed = datetime.now() - datetime.strptime(order['time_start'], '%H:%M:%S')
                 print("time elapsed: ", elapsed.seconds / 60, flush=True)
-                if elapsed.seconds / 60 > 15:
+                if elapsed.seconds / 60 > 2:
                     db.remove(Order.id == order['id'])
         time.sleep(10)
 
