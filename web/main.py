@@ -16,6 +16,7 @@ Order = Query()
 def makeOrder():
     order = request.get_json()
     order['id'] = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+    order['time_start'] = None
     db.insert(order)
     return jsonify("ok")
 
@@ -36,8 +37,9 @@ def removeFinishedOrders():
 def oven_start():
     last_order = db.get(doc_id=1)
     if last_order['status'] == 'Preparing':
-        db.update({'status': 'In the oven'}, Query().id == last_order['id'])
-        db.upsert({'time_start': request.json()['timestamp']}, Query().id == last_order['id'])
+        print("timestamp: ", request.get_json()['timestamp'], flush=True)
+        db.update({'status': 'In the oven', 'time_start' : request.get_json()['timestamp']}, Query().id == last_order['id'])
+        db.update({'time_start' : request.json()['timestamp']}, Query['id'] == last_order['id'])
     return "ok"
 
 @app.route("/tracker", methods=['GET'])

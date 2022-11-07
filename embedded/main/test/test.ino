@@ -7,14 +7,14 @@
 
 
 // Replace with your network credentials
-const char* ssid = "MikroTik-65F33A";
-const char* password = "rainycloud";
+const char* ssid = "RedmiNote";
+const char* password = "lolgyere";
 //offset for timezone
 const long utcOffsetInSeconds = 3600; 
 String message = "Timer start";
 
 float data;
-const char *URL = "https://0bf0-145-93-104-144.eu.ngrok.io/oven_start";
+const char *URL = "http://145.93.37.119:8080/oven_start";
 WiFiClient client;
 HTTPClient httpClient;
 
@@ -52,14 +52,13 @@ void loop(void) {
     timeClient.update();
     
     if (button_state == HIGH && prev_state == 0) {
-      String response = "";
-      response += "{";
-      response += "\"timestamp\":";
-      response += timeClient.getFormattedTime();
-      response += ",\"message\":";
-      response += message;
-      response += "}";
-      Serial.println(response);
+       String response = "";
+    response += "{";
+    response += "\"timestamp\":\"";
+    response += timeClient.getFormattedTime();
+    response += "\"}";
+
+  Serial.println(response);
       
       httpClient.begin(client, URL);
       httpClient.addHeader("Content-Type", "application/json");
